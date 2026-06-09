@@ -34,6 +34,26 @@ analogy, and a "what you learn" payoff. Start with Lab 1.
 
 ---
 
+## Requirements — runs 100% locally (no cloud, no AWS, no GPU)
+
+This whole repo runs on your laptop. There is **nothing to connect to** — no cloud account, no API
+keys, no GPU, none of our infrastructure.
+
+| You need | Why |
+|---|---|
+| **Docker Desktop** (or Docker Engine + Compose v2) | runs the 6-container stack |
+| **~2 GB free disk + internet *once*** | the first `docker compose up` pulls `redis`/`neo4j` + a Python base image and `pip install`s deps while it builds the 5 services. After that it runs **fully offline.** |
+| **Python 3** on your host (most machines have it) | only for the Lab 4–5 helper scripts (`load.py`, `twin_validate.py`). If they report a missing module: `pip install neo4j pyyaml requests` |
+
+**Why it's self-contained:** the 5 agent services **build from source** in this repo (each has its own
+`Dockerfile`); the LLM is a **stub** (canned responses, no model server); the devices are **mocks**
+(in-memory state). The only third-party images are the public `redis` and `neo4j` from Docker Hub.
+
+> Nothing here talks to a private registry or any external infrastructure. Clone it, build it, run it
+> on a plane.
+
+---
+
 ## Quick start (5 minutes, laptop-local)
 
 ```bash
