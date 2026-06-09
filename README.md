@@ -16,6 +16,10 @@ a stub LLM** so the whole agent reasoning chain is reproducible offline. Everyth
 agent-to-agent protocol, the device-evidence step, the routing, the human-approval gate — is the
 **real architecture**.
 
+> 👋 **Never used git, Docker, or a terminal?** Start with
+> **[GETTING-STARTED.md](./GETTING-STARTED.md)** — a zero-experience, copy-paste walkthrough that gets
+> the lab running on your laptop in ~15 minutes.
+
 ---
 
 ## The 6-lab journey
